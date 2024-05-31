@@ -69,3 +69,9 @@
   margin-left: 4px;
   text-wrap: nowrap;
 }
+
+.scroll-view {
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}

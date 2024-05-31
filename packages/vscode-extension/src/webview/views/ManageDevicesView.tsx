@@ -35,9 +35,8 @@ function DeviceRow({ deviceInfo, onDeviceDelete }: DeviceRowProps) {
       </div>
       <IconButton
         tooltip={{
-          label: `Remove device with it's ${
-            deviceInfo.platform === Platform.IOS ? "runtime." : "system image."
-          }`,
+          label: `Remove device with it's ${deviceInfo.platform === Platform.IOS ? "runtime." : "system image."
+            }`,
           side: "bottom",
           type: "secondary",
         }}
@@ -92,25 +91,29 @@ function ManageDevicesView() {
       {iosDevices.length > 0 && (
         <>
           <Label>iOS Devices</Label>
-          {iosDevices.map((deviceInfo) => (
-            <DeviceRow
-              key={deviceInfo.id}
-              deviceInfo={deviceInfo}
-              onDeviceDelete={handleDeviceDelete}
-            />
-          ))}
+          <div className="scroll-view">
+            {iosDevices.map((deviceInfo) => (
+              <DeviceRow
+                key={deviceInfo.id}
+                deviceInfo={deviceInfo}
+                onDeviceDelete={handleDeviceDelete}
+              />
+            ))}
+          </div>
         </>
       )}
       {androidDevices.length > 0 && (
         <>
           <Label>Android Devices</Label>
-          {androidDevices.map((deviceInfo) => (
-            <DeviceRow
-              key={deviceInfo.id}
-              deviceInfo={deviceInfo}
-              onDeviceDelete={handleDeviceDelete}
-            />
-          ))}
+          <div className="scroll-view">
+            {androidDevices.map((deviceInfo) => (
+              <DeviceRow
+                key={deviceInfo.id}
+                deviceInfo={deviceInfo}
+                onDeviceDelete={handleDeviceDelete}
+              />
+            ))}
+          </div>
         </>
       )}
       <Button className="create-button" onClick={() => setCreateDeviceViewOpen(true)}>
