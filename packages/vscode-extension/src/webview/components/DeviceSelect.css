@@ -53,6 +53,12 @@
   padding: 6px;
 }
 
+.device-select-scroll-list{
+  max-height: 60vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 6px;
+}
 .device-select-separator {
   height: 1px;
   background-color: var(--swm-device-select-separator);
